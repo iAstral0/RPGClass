@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=3 uid="uid://cakggtui88ene"]
+
+[ext_resource type="Script" path="res://Scenes/rpgclass.gd" id="1_ix0d3"]
+[ext_resource type="Texture2D" uid="uid://dnmbkvrforaaa" path="res://Assets/UI/UiCozyFree.png" id="2_t46ia"]
+[ext_resource type="Texture2D" uid="uid://bvsnqcxil5uww" path="res://Assets/Characters/rogues.png" id="2_xeow0"]
+[ext_resource type="FontFile" uid="uid://ko8yqddo14o" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="4_mtk76"]
+[ext_resource type="StyleBox" uid="uid://w0rlrm3tol4w" path="res://Scenes/RPG.tres" id="5_3x3ge"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hxrly"]
+line_spacing = 0.0
+font = ExtResource("4_mtk76")
+font_size = 55
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.607843)
+shadow_offset = Vector2(8, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgy72"]
+font = ExtResource("4_mtk76")
+font_size = 27
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_uls3t"]
+default_font = ExtResource("4_mtk76")
+default_font_size = 32
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/styles/panel = ExtResource("5_3x3ge")
+
+[node name="RPGClass" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ix0d3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.810398, 0.513999, 0.360345, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(213, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -427.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(200, 110)
+layout_mode = 2
+texture = ExtResource("2_t46ia")
+region_rect = Rect2(7.63387, 166.594, 87.4285, 81.6301)
+patch_margin_left = 5
+patch_margin_top = 8
+patch_margin_right = 5
+patch_margin_bottom = 7
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(320, 155)
+scale = Vector2(3, 3)
+texture = ExtResource("2_xeow0")
+hframes = 7
+vframes = 7
+
+[node name="JobName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -126.0
+offset_right = 125.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jobname"
+label_settings = SubResource("LabelSettings_hxrly")
+horizontal_alignment = 1
+
+[node name="JobDescription" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 24.0
+offset_right = 256.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Description"
+label_settings = SubResource("LabelSettings_dgy72")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SkillBox" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = 80.0
+offset_right = 207.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_mtk76")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Skill #1 Skill #2 Skill #3"
+scroll_active = false
+
+[node name="JobDropdown" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 20.0
+offset_right = 109.0
+offset_bottom = 48.0
+grow_horizontal = 2
+focus_mode = 0
+theme = SubResource("Theme_uls3t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mtk76")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("5_3x3ge")
+theme_override_styles/normal = ExtResource("5_3x3ge")
+theme_override_styles/hover = ExtResource("5_3x3ge")
+theme_override_styles/pressed = ExtResource("5_3x3ge")
+theme_override_styles/disabled = ExtResource("5_3x3ge")
+theme_override_styles/normal_mirrored = ExtResource("5_3x3ge")
+theme_override_styles/hover_mirrored = ExtResource("5_3x3ge")
+theme_override_styles/pressed_mirrored = ExtResource("5_3x3ge")
+theme_override_styles/disabled_mirrored = ExtResource("5_3x3ge")
+alignment = 1
